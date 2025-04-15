@@ -1,141 +1,43 @@
-*This is not an official Google product*
-
-# XAI-for-practitioners
-Code for the O'Reilly book on Explainability methods for the ML practitioner.
-
 ### Title: Explainable AI for Practitioners
 
 <img src="Explainable_AI_for_Practitioners.png" alt="XAI_for_practitioners" width="400"/>
 
-## Table of Contents
-0. Preface
-1. Introduction
-   - Why Explainable AI?
-   - Who needs Explainability?
-   - Challenges in Explainability
-   - Evaluating Explainability
-   - How Has Explainability Been Used
+Link: 
 
-2. Overview of Explainability 
-   - What are Explanations?
-   - Explainability Consumers
-     - Practitioners – Data Scientists & ML Engineers
-     - Observers – Business Stakeholders & Regulators
-     - End-Users – Domain Experts & Affected Users
-   - Types of Explanations
-     - Pre-modeling explainability
-     - Intrinsic vs Post-Hoc Explainability
-     - Local, Cohort and Global Explanations
-     - Attributions, Counterfactual, and Example-based
-   - Themes throughout Explainability
-     - Feature Attributions
-       - Shapley Values
-       - Gradient-based Techniques
-       - Saliency maps and feature attributions
-    - Surrogate models
-    - Activation
+[Explainable AI for Practitioners](https://learning.oreilly.com/library/view/explainable-ai-for/9781098119126/)
+Author: Daniel Kluver, et al.
+Date: 2023-10-23
 
-3. [Explainability methods for tabular data](./03-tabular)
-   - [Permutation Feature Importance](./03-tabular/permutation_feature_importance.ipynb)
-   - [Shapley Values](./03-tabular/SHAP.ipynb)
-     - Visualizing local feature attributions
-     - Visualizing global feature attributions
-     - Interpreting Feature Attributions from Shapley Values
-     - Managed Shapley values
-   - [Explaining Tree Based Models](./03-tabular/treeinterpreters.ipynb)
-     - From Decision Trees to Tree Ensembles
-     - SHAP's TreeExplainer
-   - Partial Dependence Plots & Its Relatives
-     - [Partial Dependence Plots](./03-tabular/pdp_plots.ipynb)
-       - Working with classification models
-       - Assumption of independence
-       - Understanding feature distributions
-     - [Individual Conditional Expectation plots](./03-tabular/ice_plots.ipynb)
-     - [Accumulated Local Effects](./03-tabular/ale_plots.ipynb)
-     
-4. [Explainability methods for image data](./04-image)
-   - [Integrated Gradients](./04-image/integrated_gradients.ipynb)
-     - Choosing a baseline
-     - Accumulating Gradients
-     - Improvements on Integrated Gradients
-       - Blur Integrated Gradients
-       - Guided Integrated Gradients
-   - [XRAI](./04-image/xrai.ipynb)
-     - How XRAI works
-     - Implementing XRAI
-   - [Grad-CAM](./04-image/grad-cam.ipynb)
-     - How Grad-CAM works
-     - Implementing Grad-CAM
-     - Improving Grad-CAM
-   - [LIME](./04-image/LIME.ipynb)
-     - How LIME works
-     - Implementing LIME
-   - [Guided Backpropagation and Guided Grad-CAM](./04-image/guided_backprop_pytorch.ipynb)
-     - Guided Backprop and DeConvNets
-     - Guided Grad-CAM
 
-5. [Explainability methods for text data](./05-text)
-   - Overview of building models with text
-     - Tokenization
-     - Word embeddings and pre-trained embeddings
-   - [LIME](./05-text/LIME_for_text.ipynb)
-     - How LIME works with text
-   - [Gradient x Input](./05-text)
-     - Intuition from Linear Models
-     - From Linear to Non-linear and Text Models
-     - Grad L2-norm
-       - Comparing sensitivity and saliency methods
-   - [Layer Integrated Gradients](./05-text/layer_integrated_gradients.ipynb)
-     - A Variation on Integrated Gradients
-   - [Layer-wise Relevance Propagation (LRP)](./05-text/LRP_bert_explainability.ipynb)
-     - How LRP works
-       - The relationship between LRP and Grad x Input
-     - Deriving explanations from Attention
-   - Which method to use?
-     - [Language Interpretability Tool](https://pair-code.github.io/lit/)
 
-6. Advanced and emerging topics (with Sheeraz Ahmad)
-   - Alternative Explainability Techniques
-     - Alternate Input Attribution
-       - Example-based Explanations
-       - Influence Function-based Explanations
-       - Concept-based Explanations
-     - Explainability by Design
-   - Other Modalities
-      - Time-series Data
-      - Multimodal Data
-   - Evaluation of Explainability Techniques
-     - A Theoretical Approach
-     - Empirical Approaches
+# What Is Explainable AI?
 
-7. Interacting with Explainability
-   - Who uses Explainability?
-   - How to display Explanations
-   - Clarity in explanations
-   - Accuracy in explanations
-   - Building on existing understanding
-   - Common pitfalls in using Explainability
+At Explainable AI’s core is the creation of explanations, or to create explainability for a model. Explainability is the concept that a model’s actions can be described in terms that are comprehensible to whoever is consuming the predictions of the ML model. This explainability serves a variety of purposes, from improving model quality to building confidence, and even providing a pathway for remediation when a prediction is not one you were expecting. As we have built increasingly complex models, we have discovered that a high-performing model is not sufficient to be acceptable in the real world. It is necessary that a prediction also has a reasonable explanation and, overall, the model behaves in the way its creators intended.
 
-8. Putting it all together
-   - Building with explainability in mind
-     - The ML Life Cycle
-       - Explainability through Discovery
-       - Explainability through Development
-       - Explainability through Deployment
-   - AI regulations and explainability
-   - What to look forward to in Explainable AI
-     - Natural Explanations
-     - Interrogative Explanations
-     - Targeted Explanations
+# Challenges in Explainability
 
-9. Appendix: Taxonomy, Techniques,& Further Reading
-   - ML Consumers
-   - Taxonomy of Explainability
-   - XAI Techniques
-     - Tabular Models
-     - Image Models
-     - Text Models
-     - Advanced Techniques
-   - Interacting with Explainability
-   - Putting it all together
-   - Further Reading
+In Explainable AI, there are several outstanding challenges:
+
+- Demonstrating the semantic correctness of explanation techniques above and beyond the theoretical soundness of the underlying mathematics
+
+- Combining different explanation techniques in an easy and safe way that enhances understanding rather than generating more confusion
+
+- Building tools that allow consumers to easily explore, probe, and build richer explanations
+
+- Generating explanations that are computationally efficient
+
+- Building a strong framework for determining the robustness of explanation techniques
+
+# What Are Explanations?
+
+
+When a model makes a prediction, Explainable AI (XAI) methods generate an explanation that gives insight into the model’s behavior as to how it arrived at that prediction. When we seek explanations, we are trying to understand, Why did X happen? As an example, if we had a weather model that predicted when it rains, and we wanted to know why the model suddenly gave a 90% chance of precipitation, a useful explanation would be, 90% precipitation was predicted because the sky was overcast. Figuring out this why can help us build a better comprehension of what influences a model, how that influence occurs, and where the model performs (or fails). As part of building our own mental models, we often find a pure explanation to be unsatisfactory, so we are also interested in explanations that provide a counterfactual, or foil, to the original situation. Counterfactuals are scenarios that seek to provide an opposing, plausible, scenario of why X did not happen. If we are seeking to explain, Why did it rain today? we may also try to find the counterfactual explanation for, Why did it not rain today [in a hypothetical world]? While our primary explanation for why it rained might include temperature, barometric pressure, and humidity, it may be easier to explain that it did not rain because there were no clouds in the sky, implying that clouds are part of an explanation for why it does rain.
+
+
+
+# Interpretability and Explainability
+
+Explainability and interpretability are two ends of a spectrum. Here we show key characteristics of techniques at each end of the spectrum, and show some examples of where techniques fall along this spectrum.
+
+![](/02-overview/figures/figure_0201.png)
+
